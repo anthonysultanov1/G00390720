@@ -11,6 +11,18 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'series',
+    loadChildren: () => import('./series/series.module').then( m => m.SeriesPageModule)
+  },
+  {
+    path: 'aboutme',
+    loadChildren: () => import('./aboutme/aboutme.module').then( m => m.AboutmePageModule)
+  },
+  {
+    path: 'flashlight',
+    loadChildren: () => import('./flashlight/flashlight.module').then( m => m.FlashlightPageModule)
+  }
 ];
 
 @NgModule({

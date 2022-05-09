@@ -3,10 +3,10 @@ import { MoviesService} from '../Services/movies.service';
 
 @Component({
   selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
+  templateUrl: 'series.page.html',
+  styleUrls: ['series.page.scss'],
 })
-export class HomePage implements OnInit {
+export class SeriesPage implements OnInit {
 MovieData:any = [];
 searchValue:any = [];
   constructor(private movieService:MoviesService) {}
@@ -23,7 +23,7 @@ searchValue:any = [];
  }
     );
    }
-//this helps the search feature
+
    updateSearchList() {
     if (this.searchValue === "") {
       this.movieService.GetMovieData().subscribe(
@@ -34,7 +34,7 @@ searchValue:any = [];
         }
            );
     } else {
-        this.movieService.GetSearch(this.searchValue).subscribe((data: any[]) => {
+        this.movieService.GetSeries(this.searchValue).subscribe((data: any[]) => {
            this.MovieData = data['Search'];
         });
     }

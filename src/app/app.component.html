@@ -1,3 +1,30 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-menu menuId="main-menu" content-id="main" type="reveal">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Sidebar</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item routerLink="/home" (click)="toggleMenu()">
+          <ion-icon name="videocam" slot="start"></ion-icon>
+          <ion-label>Avengers</ion-label>
+        </ion-item>
+        <ion-item routerLink="/series" (click)="toggleMenu()">
+          <ion-icon name="videocam" slot="start"></ion-icon>
+          <ion-label>Series</ion-label>
+        </ion-item>
+        <ion-item routerLink="/flashlight" (click)="toggleMenu()">
+          <ion-icon name="flashlight" slot="start"></ion-icon>
+          <ion-label>FlashLight</ion-label>
+        </ion-item>
+        <ion-item routerLink="/aboutme" (click)="toggleMenu()">
+          <ion-icon name="logo-apple-appstore" slot="start"></ion-icon>
+          <ion-label>About App</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="main"></ion-router-outlet>
 </ion-app>
